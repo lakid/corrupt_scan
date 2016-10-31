@@ -36,7 +36,7 @@ def listener():
   rospy.Subscriber("/base_scan_1", LaserScan, callback)
 
   dyn_corruption = rospy.get_param('~dyn_corruption', 0)
-  pub = rospy.Publisher('/scan', LaserScan, queue_size=10)
+  pub = rospy.Publisher('/scan', LaserScan, queue_size=100)
 
   rospy.loginfo("Corrupting data at %d", dyn_corruption)
   # spin() simply keeps python from exiting until this node is stopped
